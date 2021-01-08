@@ -1,0 +1,7 @@
+{
+  "name": "Beauty-Vote",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
