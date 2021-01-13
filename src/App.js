@@ -16,14 +16,12 @@ import {
   addCircleOutline,
   searchCircleOutline,
   albumsOutline,
-  personCircleOutline
 } from "ionicons/icons"
 import Home from './pages/Home';
 import Trending from './pages/Trending';
 import Album from './pages/Album';
 import Search from './pages/Search';
 import Submit from './pages/Submit';
-import Profile from './pages/Profile';
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -86,10 +84,6 @@ const App = () => {
               <IonLabel>Album</IonLabel>
             </IonTabButton>
 
-            <IonTabButton tab="profile" href="/profile">
-              <IonIcon icon={personCircleOutline} />
-              <IonLabel>Your Profile</IonLabel>
-            </IonTabButton>
           </IonTabBar>
         </IonTabs>
       </IonReactRouter>
