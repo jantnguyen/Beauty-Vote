@@ -1,18 +1,18 @@
 import React from 'react';
 import {
-  IonPage,IonHeader,
-  IonTitle,
-  IonToolbar
+  IonPage,
+  IonContent
 } from '@ionic/react';
+import LargeHeader from '../components/Header/LargeHeader';
+import SmallHeader from '../components/Header/SmallHeader';
 
 const Album = () => {
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Album</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <SmallHeader title ="Album" />
+      <IonContent>
+        <LargeHeader title ="Album" />
+      </IonContent>
     </IonPage>
   )
 }

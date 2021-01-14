@@ -7,7 +7,9 @@ import {
   IonLabel,
   IonRouterOutlet,
   IonTabBar,
-  IonTabButton
+  IonTabButton,
+  IonItem,
+  IonToggle
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import {
@@ -61,9 +63,8 @@ const App = () => {
 
             <IonTabButton tab="home" href="/home">
               <IonIcon icon={listCircleOutline} />
-              <IonLabel>BeautyVote</IonLabel>
+              <IonLabel>Home</IonLabel>
             </IonTabButton>
-
             <IonTabButton tab="trending" href="/trending">
               <IonIcon icon={trendingUpOutline} />
               <IonLabel>Trending</IonLabel>
