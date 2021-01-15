@@ -8,8 +8,6 @@ import {
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
-  IonItem,
-  IonToggle
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import {
@@ -17,13 +15,16 @@ import {
   trendingUpOutline,
   addCircleOutline,
   searchCircleOutline,
-  albumsOutline,
+  personCircleOutline,
 } from "ionicons/icons"
 import Home from './pages/Home';
-import Trending from './pages/Trending';
-import Album from './pages/Album';
+import Profile from './pages/Profile';
 import Search from './pages/Search';
 import Submit from './pages/Submit';
+import EditProfile from './pages/EditProfile'
+import Login from './pages/Login';
+import Signup from './pages/Signup'
+import Forgot from './pages/Forgot'
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -53,10 +54,14 @@ const App = () => {
           <IonRouterOutlet>
             <Route path="/" render={() => <Redirect to="/home" exact={true} />} />
             <Route path="/home" component={Home} />
-            <Route path="/trending" component={Trending} />
             <Route path="/submit" component={Submit} />
-            <Route path="/album" component={Album} />
+            <Route path="/profile" component={Profile} />
+            <Route path="/edit-profile" component={EditProfile} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login} />
+            <Route path="/forgot" component={Forgot} />
             <Route path="/search" component={Search} />
+
             <Route component={() => <Redirect to="/home" />} />
           </IonRouterOutlet>
           <IonTabBar slot="bottom">
@@ -65,14 +70,10 @@ const App = () => {
               <IonIcon icon={listCircleOutline} />
               <IonLabel>Home</IonLabel>
             </IonTabButton>
-            <IonTabButton tab="trending" href="/trending">
-              <IonIcon icon={trendingUpOutline} />
-              <IonLabel>Trending</IonLabel>
-            </IonTabButton>
 
-            <IonTabButton tab="submit" href="/submit">
-              <IonIcon icon={addCircleOutline} />
-              <IonLabel>Submit</IonLabel>
+            <IonTabButton tab="profile" href="/profile">
+              <IonIcon icon={personCircleOutline} />
+              <IonLabel>Profile</IonLabel>
             </IonTabButton>
 
             <IonTabButton tab="search" href="/search">
@@ -80,10 +81,14 @@ const App = () => {
               <IonLabel>Search</IonLabel>
             </IonTabButton>
 
-            <IonTabButton tab="album" href="/album">
-              <IonIcon icon={albumsOutline} />
-              <IonLabel>Album</IonLabel>
+            <IonTabButton tab="submit" href="/submit">
+              <IonIcon icon={addCircleOutline} />
+              <IonLabel>Submit</IonLabel>
             </IonTabButton>
+
+
+
+
 
           </IonTabBar>
         </IonTabs>

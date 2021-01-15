@@ -6,15 +6,15 @@ import {
 import LargeHeader from '../components/Header/LargeHeader';
 import SmallHeader from '../components/Header/SmallHeader';
 
-const Trending = () => {
+const Profile = () => {
   return (
     <IonPage>
-      <SmallHeader title ="Trending" />
+      <SmallHeader title ="Profile" />
       <IonContent>
-        <LargeHeader title ="Trending" />
+        <LargeHeader title ="Profile" />
       </IonContent>
     </IonPage>
   )
 }
 
-export default Trending;
+export default Profile;
