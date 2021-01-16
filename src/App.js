@@ -71,9 +71,9 @@ const App = () => {
               <IonLabel>Home</IonLabel>
             </IonTabButton>
 
-            <IonTabButton tab="profile" href="/profile">
-              <IonIcon icon={personCircleOutline} />
-              <IonLabel>Profile</IonLabel>
+            <IonTabButton tab="submit" href="/submit">
+              <IonIcon icon={addCircleOutline} />
+              <IonLabel>Submit</IonLabel>
             </IonTabButton>
 
             <IonTabButton tab="search" href="/search">
@@ -81,9 +81,9 @@ const App = () => {
               <IonLabel>Search</IonLabel>
             </IonTabButton>
 
-            <IonTabButton tab="submit" href="/submit">
-              <IonIcon icon={addCircleOutline} />
-              <IonLabel>Submit</IonLabel>
+            <IonTabButton tab="profile" href="/profile">
+              <IonIcon icon={personCircleOutline} />
+              <IonLabel>Profile</IonLabel>
             </IonTabButton>
 
 
