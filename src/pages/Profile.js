@@ -62,7 +62,7 @@ const Profile = (props) => {
             </IonCard>
             <IonRow>
               <IonCol>
-                <IonButton shape="round"expand="undefined" routerLink={`/edit-profile`} color="primary" fill="outline">
+                <IonButton shape="round" expand="block" routerLink={`/edit-profile`} color="primary" fill="outline">
                   Edit Profile
                 </IonButton>
               </IonCol>
@@ -70,7 +70,7 @@ const Profile = (props) => {
 
             <IonRow>
               <IonCol>
-                <IonButton shape ="round" expand="undefined" color="primary" fill="outline" onClick={logoutUser}>
+                <IonButton shape ="round" expand="block" color="primary" fill="outline" onClick={logoutUser}>
                   Log out
                 </IonButton>
               </IonCol>
@@ -80,7 +80,7 @@ const Profile = (props) => {
           <IonGrid>
             <IonRow>
               <IonCol>
-                <IonButton expand="block" routerLink={`/signup`} color="primary">
+                <IonButton  expand="block" routerLink={`/signup`} color="primary" fill="outline" shape ="round">
                   Sign up
                 </IonButton>
               </IonCol>
@@ -88,7 +88,7 @@ const Profile = (props) => {
 
             <IonRow>
               <IonCol>
-                <IonButton expand="block" routerLink={`/login`} color="primary" fill="solid">
+                <IonButton expand="block" routerLink={`/login`} color="primary" fill="outline" shape ="round">
                   Log in
                 </IonButton>
               </IonCol>
