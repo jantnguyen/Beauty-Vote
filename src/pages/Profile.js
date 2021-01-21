@@ -13,7 +13,7 @@ import {
   IonItem,
   IonGrid
 } from '@ionic/react';
-import {personCircleOutline, mailOpenOutline} from 'ionicons/icons';
+import {personCircleOutline, mailOpenOutline, pencilOutline} from 'ionicons/icons';
 import UserContext from '../contexts/UserContext';
 import firebase from '../firebase';
 import { toast } from "../utils/toast";
@@ -48,6 +48,12 @@ const Profile = (props) => {
                       <p>Username</p>
                       <strong>{user.displayName}</strong>
                     </IonLabel>
+                    <IonButton fill="clear" size="medium" routerLink={`/edit-profile`}>
+                      <IonIcon
+                         icon={pencilOutline} slot="end">
+                      </IonIcon>
+                    </IonButton>
+
                   </IonItem>
 
                   <IonItem>
@@ -63,7 +69,7 @@ const Profile = (props) => {
             <IonRow>
               <IonCol>
                 <IonButton shape="round" expand="block" routerLink={`/edit-profile`} color="primary" fill="outline">
-                  Edit Profile
+                  Change Password
                 </IonButton>
               </IonCol>
             </IonRow>

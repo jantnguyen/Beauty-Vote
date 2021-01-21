@@ -52,6 +52,7 @@ const Login = (props) => {
         <IonItem lines="full">
           <IonLabel position="floating">Email</IonLabel>
           <IonInput
+          autocomplete="true"
           name="email"
           type="text"
           value={values.email}
