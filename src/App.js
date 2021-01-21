@@ -25,7 +25,7 @@ import EditProfile from './pages/EditProfile'
 import Login from './pages/Login';
 import Signup from './pages/Signup'
 import Forgot from './pages/Forgot'
-import useAuth from './hooks/Auth'
+import useAuth from './hooks/useAuth'
 import UserContext from './contexts/UserContext'
 
 
