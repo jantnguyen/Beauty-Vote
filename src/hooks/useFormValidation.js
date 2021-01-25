@@ -29,6 +29,7 @@ function useFormValidation(initialState, validate, action) {
   }
 
   function handleSubmit() {
+    console.log(`useformvalidation 32: ${JSON.stringify(values)}`);
     const validationErrors = validate(values);
     setErrors(validationErrors);
     setSubmitting(true);
