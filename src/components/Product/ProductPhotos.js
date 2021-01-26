@@ -8,8 +8,11 @@ function ProductPhotos({ photos }) {
     <IonCard>
       <IonList lines="inset">
         <IonItem>
-          <div style={{ margin: "0 auto" }}>
-            <IonImg src={photos[index]} />
+          <div style={{ margin:"0 auto" }}>
+            <IonImg
+              src={photos[index]}
+              style={{width: "500px"}}
+               />
           </div>
         </IonItem>
         <IonItem>
@@ -18,8 +21,12 @@ function ProductPhotos({ photos }) {
               key={`photo_${i}`}
               onClick={() => setIndex(i)}
               slot="start"
+
             >
-              <IonImg src={p} />
+              <IonImg
+                src={p}
+                style={{ borderRadius: "50px", border: "1px solid #df539e"}}
+                 />
             </IonThumbnail>
           ))}
         </IonItem>

@@ -132,7 +132,7 @@ const Product = (props) => {
                   <ProductItem product={product} browser={openBrowser} />
                   <ProductPhotos photos={product.photos} />
                   <IonButton onClick={() => handleAddVote()} size="small">
-                    Upvote
+                    Like
                   </IonButton>
                   <IonButton onClick={() => handleOpenModal()} size="small">
                     Comment
