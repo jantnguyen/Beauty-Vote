@@ -6,7 +6,7 @@ function ProductPhotos({ photos }) {
   const [index, setIndex] = useState(0);
   return (
     <IonCard>
-      <IonList lines="none">
+      <IonList lines="inset">
         <IonItem>
           <div style={{ margin: "0 auto" }}>
             <IonImg src={photos[index]} />

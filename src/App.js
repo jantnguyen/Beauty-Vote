@@ -11,7 +11,6 @@ import {
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import {
-  listCircleOutline,
   searchOutline,
   personCircleOutline,
   addCircleOutline,

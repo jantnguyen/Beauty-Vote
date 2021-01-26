@@ -10,6 +10,7 @@ import {
 import { closeCircleOutline } from "ionicons/icons";
 
 import firebase from "../firebase";
+import productService from "../services/product";
 import { Plugins } from "@capacitor/core";
 import UserContext from "../contexts/UserContext";
 import NavHeader from "../components/Header/NavHeader";
@@ -21,6 +22,7 @@ const { Browser } = Plugins;
 const Product = (props) => {
   const { user } = React.useContext(UserContext);
   const [product, setProduct] = React.useState(null);
+  const [showModal, setShowModal] = React.useState(false);
   const productId = props.match.params.productId;
   const productRef = firebase.db.collection("products").doc(productId);
 
@@ -33,6 +35,17 @@ const Product = (props) => {
     productRef.get().then((doc) => {
       setProduct({ ...doc.data(), id: doc.id });
     });
+  }
+
+  function handleAddVote() {
+    if (!user) {
+      props.history.push("/login");
+    } else {
+      productService
+        .addUpvote(user, productId)
+        .then((newProduct) => setProduct(newProduct))
+        .catch(() => props.history.push("/login"));
+    }
   }
 
   function handleDeleteProduct() {
