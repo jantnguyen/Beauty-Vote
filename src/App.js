@@ -26,6 +26,7 @@ import Signup from './pages/Signup'
 import Forgot from './pages/Forgot'
 import useAuth from './hooks/useAuth'
 import UserContext from './contexts/UserContext'
+import Product from "./pages/Product"
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -65,6 +66,7 @@ const App = () => {
             <Route path="/login" component={Login} />
             <Route path="/forgot" component={Forgot} />
             <Route path="/search" component={Search} />
+            <Route path="product/:productId" component={Product} />
 
             <Route component={() => <Redirect to="/home" />} />
           </IonRouterOutlet>

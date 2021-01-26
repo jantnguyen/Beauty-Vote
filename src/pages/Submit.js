@@ -44,10 +44,16 @@ const Submit = ({ history }) => {
 
       setSubmitting(true);
 
-      const {description, } = values;
+      const { url, description, title } = values;
       const id = firebase.db.collection("products").doc().id;
 
       await Promise.all([
+        ...thumb.map((f, index) =>
+          firebase.storage
+            .ref()
+            .child(`products/${id}_thumb_${index}.jpg`)
+            .put(f)
+        ),
         ...photos.map((f, index) =>
           firebase.storage
             .ref()
@@ -65,13 +71,24 @@ const Submit = ({ history }) => {
         )
       );
 
+      const productThumbs = await Promise.all(
+        thumb.map((f, index) =>
+          firebase.storage
+            .ref()
+            .child(`products/${id}_thumb_${index}.jpg`)
+            .getDownloadURL()
+        )
+      );
+
       const newProduct = {
+        title,
+        url,
         description,
         postedBy: {
           id: user.uid,
           name: user.displayName,
         },
-        thumbnail: productPhotos[0] || null,
+        thumbnail: productThumbs[0] || null,
         photos: productPhotos,
         voteCount: 1,
         comments: [],
@@ -99,6 +116,17 @@ const Submit = ({ history }) => {
       <IonContent>
         <LargeHeader title="Submit" />
         <IonItem lines="full">
+          <IonLabel position="floating">Title</IonLabel>
+          <IonInput
+            name="title"
+            value={values.title}
+            type="text"
+            onIonChange={handleChange}
+            required
+          ></IonInput>
+        </IonItem>
+
+        <IonItem lines="full">
           <IonLabel position="floating">Description</IonLabel>
           <IonInput
             name="description"
@@ -109,6 +137,25 @@ const Submit = ({ history }) => {
           ></IonInput>
         </IonItem>
 
+        <IonItem lines="full">
+          <IonLabel position="floating">URL</IonLabel>
+          <IonInput
+            name="url"
+            type="url"
+            value={values.url}
+            onIonChange={handleChange}
+            required
+          ></IonInput>
+        </IonItem>
+        <IonRow>
+          <IonCol>
+            <Upload
+              files={thumb}
+              onChange={setThumb}
+              placeholder="Select Thumbnail"
+            />
+          </IonCol>
+        </IonRow>
         <IonRow>
           <IonCol>
             <Upload
